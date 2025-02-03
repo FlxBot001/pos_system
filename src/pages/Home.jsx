@@ -2,6 +2,8 @@ import React from 'react'
 import BottomNav from '../components/BottomNav'
 import Greetings from '../components/home/Greetings'
 import MiniCard from '../components/home/MiniCard'
+import { BsCashCoin } from 'react-icons/bs'
+import { GrInProgress } from 'react-icons/gr'
 
 const Home = () => {
   return (
@@ -10,8 +12,18 @@ const Home = () => {
       <div className="flex-[3]">
         <Greetings />
         <div className="flex items-center w-full gap-3 px-8 mt-8">
-          <MiniCard />
-          <MiniCard />
+          <MiniCard 
+            title="Total Earnings"
+            icon={<BsCashCoin />}
+            number={512}
+            footerNum={1.6}
+          />
+          <MiniCard 
+            title="In Progress"
+            icon={<GrInProgress />}
+            number={16}
+            footerNum={3.6}
+          />
         </div>
       </div>
       {/* Right Div */}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MiniCard = () => {
+const MiniCard = ({title, icon, number, footerNum}) => {
   return (
     <div>MiniCard</div>
   )
