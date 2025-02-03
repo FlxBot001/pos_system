@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaSearch, FaBell} from 'react-icons/fa';
+import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa'
 
 const Header = () => {
   return (
@@ -28,7 +28,7 @@ const Header = () => {
         <div>
           <FaUserCircle className="text-[#f5f5f5] text-2xl" />
           <div>
-            <h1>Amrit Raj</h1>
+            <h1>Felix Njuguna</h1>
             <p>Admin</p>
           </div>
         </div>
@@ -38,4 +38,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Header
