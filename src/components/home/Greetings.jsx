@@ -41,8 +41,8 @@ const Greetings = () => {
         </p>
       </div>
       <div className="">
-        <h1>{formatTime(dateTime)}</h1>
-        <p>{formatDate(dateTime)}</p>
+        <h1 className="text-[#f5f5f5] text-3xl font-bold tracking-wide w-[130px]">{formatTime(dateTime)}</h1>
+        <p className="text-[#ababab] text-sm">{formatDate(dateTime)}</p>
       </div>
     </div>
   );
