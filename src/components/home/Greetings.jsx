@@ -28,6 +28,8 @@ const Greetings = () => {
     return `${months[date.getMonth()]} ${String(date.getDate()).padStart(2, '0')}, ${date.getFullYear()}`;
   }
 
+  const formatTime = (date) => `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+
   return (
     <div className="flex justify-between items-center px-8 mt-5">
       <div>
@@ -39,8 +41,8 @@ const Greetings = () => {
         </p>
       </div>
       <div className="">
-        <h1>time</h1>
-        <p>date</p>
+        <h1>{formatTime(dateTime)}</h1>
+        <p>{formatDate(dateTime)}</p>
       </div>
     </div>
   );
