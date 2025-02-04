@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa'
+import OrderList from './OrderList'
 
 const RecentOrders = () => {
     return (
@@ -15,14 +16,17 @@ const RecentOrders = () => {
                 </div>
 
                 {/* SEARCH */}
-                <div className="flex items-center gap-4 bg-[#1f1f1f] rounded-[20px] px-5 py-2 w-[500px]">
+                <div className="flex items-center gap-4 bg-[#1f1f1f] rounded-[20px] px-6 py-4 mx-6">
                     <FaSearch className="text-[#f5f5f5]" />
                     <input
                         type="text"
-                        placeholder="Search for food"
+                        placeholder="Search recent orders"
                         className="bg-[#1f1f1f] outline-none text-[#f5f5f5]"
                     />
                 </div>
+
+                {/* Order List */}
+                <OrderList />
             </div>
         </div>
     )
