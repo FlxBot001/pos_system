@@ -26,7 +26,9 @@ const RecentOrders = () => {
                 </div>
 
                 {/* Order List */}
-                <OrderList />
+                <div className="mt-4 px-6">
+                    <OrderList />
+                </div>
             </div>
         </div>
     )
