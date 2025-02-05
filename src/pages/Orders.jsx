@@ -27,8 +27,28 @@ const Orders = () => {
       </div>
 
       {/* Order Card */}
-      <div className="px-10 py-4">
-        <OrderCard />
+      <div className="flex flex-wrap gap-12 px-10 items-center justify-center py-4 overflow-y-scroll scrollbar-hide h-[calc(100vh-5rem-5rem)]">
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
       </div>
 
       {/* Bottom Nav */}
