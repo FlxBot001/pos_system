@@ -27,7 +27,9 @@ const Orders = () => {
       </div>
 
       {/* Order Card */}
-      <OrderCard />
+      <div className="px-10 py-4">
+        <OrderCard />
+      </div>
 
       {/* Bottom Nav */}
       <BottomNav />
