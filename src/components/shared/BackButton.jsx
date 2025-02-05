@@ -8,7 +8,7 @@ const BackButton = () => {
   return (
     <button 
       onClick={() => navigate(-1)}
-      className="bg-[#f6b100] p-4 text-xl font-bold rounded-full cursor-pointer hover:bg-[#e67b00] hover:text-[#fff] transition-all duration-200"
+      className="bg-[#025cca] p-3 text-2xl font-bold rounded-full hover:bg-[#e66800] hover:text-[#fff] transition-all duration-200"
       aria-label="Go Back"
     >
       <IoArrowBack />
