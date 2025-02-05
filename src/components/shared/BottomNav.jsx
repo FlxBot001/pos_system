@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BiSolidDish } from 'react-icons/bi'
 import { CiCircleMore } from 'react-icons/ci'
 import { FaHome } from 'react-icons/fa'
@@ -6,6 +6,10 @@ import { MdOutlineReorder, MdTableBar } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 const BottomNav = () => {
+
+    const [isModalOPen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     const navigate = useNavigate();
     return (
