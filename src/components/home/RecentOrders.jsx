@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa'
-import OrderList from './OrderList'
+import OrderList from '../order/OrderList'
 
 const RecentOrders = () => {
     return (

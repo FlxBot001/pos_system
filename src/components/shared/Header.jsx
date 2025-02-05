@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa'
-import logo from '../assets/logo1.png'
+import logo from '../../assets/logo1.png';
 
 const Header = () => {
     return (

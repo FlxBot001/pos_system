@@ -1,5 +1,5 @@
 import React from 'react'
-import BottomNav from '../components/BottomNav'
+import BottomNav from '../components/shared/BottomNav'
 import Greetings from '../components/home/Greetings'
 import MiniCard from '../components/home/MiniCard'
 import { BsCashCoin } from 'react-icons/bs'
