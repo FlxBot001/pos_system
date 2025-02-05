@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {Home, Auth, Orders} from './pages';
 import Header from './components/Header';
+import Tables from './pages/Tables';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/tables" element={<Tables />} />
         </Routes>
       </Router>
     </>
