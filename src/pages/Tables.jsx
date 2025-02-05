@@ -24,19 +24,9 @@ const Tables = () => {
             All
           </button>
           <button
-            onClick={() => setStatus('progress')}
-            className={`text-lg text-[#ababab] ${status === "progress" && "bg-[#383838] rounded-lg px-5 py-2"} rounded-lg px-5 py-2 font-semibold`}>
-            In Progress
-          </button>
-          <button
-            onClick={() => setStatus('ready')}
-            className={`text-lg text-[#ababab] ${status === "ready" && "bg-[#383838] rounded-lg px-5 py-2"} rounded-lg px-5 py-2 font-semibold`}>
-            Ready
-          </button>
-          <button
-            onClick={() => setStatus('completed')}
-            className={`text-lg text-[#ababab] ${status === "completed" && "bg-[#383838] rounded-lg px-5 py-2"} rounded-lg px-5 py-2 font-semibold`}>
-            Completed
+            onClick={() => setStatus('booked')}
+            className={`text-lg text-[#ababab] ${status === "booked" && "bg-[#383838] rounded-lg px-5 py-2"} rounded-lg px-5 py-2 font-semibold`}>
+            Booked
           </button>
         </div>
 
