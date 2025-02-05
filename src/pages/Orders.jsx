@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import BottomNav from '../components/BottomNav'
+import BottomNav from '../components/shared/BottomNav'
 import OrderCard from '../components/order/OrderCard'
 import BackButton from '../components/shared/BackButton'
 
