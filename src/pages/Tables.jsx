@@ -29,11 +29,43 @@ const Tables = () => {
             Booked
           </button>
         </div>
-
-        {/* Tables Card */}
-        <TableCard />
       </div>
-      
+      {/* Tables Card */}
+      <div className="px-16 py-4">
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      <TableCard />
+      </div>
+
+
       {/* Bottom Nav */}
       <BottomNav />
     </section>
