@@ -16,12 +16,12 @@ const TableCard = ({
                 <h1 className="text-xl text-[#f5f5f5] font-semibold">
                     {name}
                 </h1>
-                <p className="text-green-600 bg-[#2e4a40] px-2 py-1 rounded-lg">
+                <p className={`${status === "Booked" ? "text-green-600 bg-[#2e4140]" : "bg-[#664a04] text-white"} px-2 py-1 rounded-lg`} >
                     {status}
                 </p>
             </div>
-            <div className="flex items-center justify-center mb-4 mt-4 my-5">
-                <h1 className="text-white rounded-full p-5 text-2xl bg-[#025cca]">
+            <div className="flex items-center justify-center mb-7 mt-5">
+                <h1 className={`text-white rounded-full p-5 text-2xl bg-[#025cca]`}>
                     {initials}
                 </h1>
             </div>
