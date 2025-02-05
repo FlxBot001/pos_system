@@ -1,39 +1,25 @@
 export const getRandomBG = () => {
     const colors = [
-        '#f1f1f1',
-        '#f8f8f8',
-        '#f0f0f0',
-        '#e8e8e8',
-        '#e0e0e0',
-        '#d8d8d8',
-        '#d0d0d0',
-        '#c8c8c8',
-        '#c0c0c0',
-        '#b8b8b8',
-        '#b0b0b0',
-        '#a8a8a8',
-        '#a0a0a0',
-        '#989898',
-        '#909090',
-        '#888888',
-        '#808080',
-        '#787878',
-        '#707070',
-        '#686868',
-        '#606060',
-        '#585858',
-        '#505050',
-        '#484848',
-        '#404040',
-        '#383838',
-        '#303030',
-        '#282828',
-        '#202020',
-        '#181818',
-        '#101010',
-        '#080808',
-        '#000000',
+        '#FF5733', // Vibrant Red
+        '#FFBD33', // Yellow-Orange
+        '#33FF57', // Vibrant Green
+        '#33A1FF', // Sky Blue
+        '#8E44AD', // Purple
+        '#F39C12', // Bright Yellow
+        '#E74C3C', // Bright Red
+        '#1ABC9C', // Teal
+        '#9B59B6', // Lavender
+        '#3498DB', // Blue
+        '#F1C40F', // Golden Yellow
+        '#2ECC71', // Emerald Green
+        '#E67E22', // Orange
+        '#16A085', // Dark Cyan
+        '#D35400', // Deep Orange
+        '#2980B9', // Strong Blue
+        '#8E44AD', // Bold Purple
+        '#C0392B', // Red
+        '#7F8C8D', // Cool Gray
+        '#2C3E50', // Dark Blue
     ];
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    return "bg-[" + color + "]";
-}
+    return colors[Math.floor(Math.random() * colors.length)];
+};
