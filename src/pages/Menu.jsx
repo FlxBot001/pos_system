@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 import BackButton from '../components/shared/BackButton'
 import { MdRestaurantMenu } from 'react-icons/md';
 import MenuContainer from '../components/menu/MenuContainer';
+import BottomNav from '../components/shared/BottomNav';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
+import { FaNotesMedical } from 'react-icons/fa6';
+import CustomerInfo from '../components/menu/CustomerInfo';
+import CartItems from '../components/menu/CartInfo';
+import CartInfo from '../components/menu/CartInfo';
+import BillInfo from '../components/menu/BillInfo';
 
 const Menu = () => {
 
@@ -38,9 +45,23 @@ const Menu = () => {
       </div>
 
       {/* Right Div */}
-      <div className="flex-[1] bg-blue-500 h-full">
-        Right
+      <div className="flex-[1] bg-[#1a1a1a] mt-4 mr-3 h-[780px] rounded-lg pt-2">
+        {/* Customer INfo */}
+        <CustomerInfo />
+        <hr className="border-t-2 border-[#2a2a2a]" />
+
+        {/* Cart Items */}
+        <CartInfo />
+        <hr className="border-t-2 border-[#2a2a2a]" />
+
+        {/* Bills */}
+        <BillInfo />
+        <hr className="border-t-2 border-[#2a2a2a]" />
+
       </div>
+
+      {/* Botom Nan */}
+      <BottomNav />
 
 
 
