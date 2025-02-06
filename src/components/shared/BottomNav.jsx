@@ -64,7 +64,7 @@ const BottomNav = () => {
             </button>
 
             <button
-                disabled={isActive("/tables")}
+                disabled={isActive("/tables") || isActive("/menu")}
                 onClick={openModal}
                 className="absolute bottom-6 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
             >
