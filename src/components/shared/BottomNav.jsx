@@ -3,7 +3,7 @@ import { BiSolidDish } from 'react-icons/bi'
 import { CiCircleMore } from 'react-icons/ci'
 import { FaHome } from 'react-icons/fa'
 import { MdOutlineReorder, MdTableBar } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Modal from '../shared/Modal'
 
 const BottomNav = () => {
@@ -13,6 +13,7 @@ const BottomNav = () => {
     const closeModal = () => setIsModalOpen(false);
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const increment = () => {
         if (guestCount < 6) {
@@ -26,11 +27,15 @@ const BottomNav = () => {
         }
     }
 
+    const isActive = (path) => location.pathname === path;
+
     return (
         <div className="fixed bottom-0 left-0 right-0 p-2 flex justify-around bg-[#262626] h-16 shadow-lg">
             <button
                 onClick={() => navigate("/")}
-                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px] bg-[#343434] rounded-lg py-2"
+                className={`flex items-center justify-center font-bold ${
+                    isActive("/") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                } w-[300px] rounded-[20px]`}
             >
                 <FaHome size={20} className="mr-2 inline" />
                 <p>Home</p>
