@@ -33,10 +33,10 @@ const Menu = () => {
             </div>
           </div>
         </div>
+        {/* Menu Container Component */}
+        <MenuContainer />
       </div>
 
-      {/* Menu Container Component */}
-      <MenuContainer />
       {/* Right Div */}
       <div className="flex-[1] bg-blue-500 h-full">
         Right
