@@ -40,6 +40,7 @@ const BottomNav = () => {
                 <FaHome size={20} className="mr-2 inline" />
                 <p>Home</p>
             </button>
+
             <button
                 onClick={() => navigate("/orders")}
                 className={`flex items-center justify-center font-bold ${
@@ -49,6 +50,7 @@ const BottomNav = () => {
                 <MdOutlineReorder size={20} className="mr-4 inline" />
                 <p>Orders</p>
             </button>
+
             <button
                 onClick={() => navigate("/tables")}
                 className={`flex items-center justify-center font-bold ${
@@ -58,11 +60,12 @@ const BottomNav = () => {
                 <MdTableBar size={20} className="mr-2 inline" />
                 <p>Tables</p>
             </button>
+
             <button className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]">
                 <CiCircleMore size={20} className="mr-2 inline" />
                 <p>More</p>
             </button>
-
+            
             <button
                 disabled={isActive("/tables") || isActive("/menu")}
                 onClick={openModal}
