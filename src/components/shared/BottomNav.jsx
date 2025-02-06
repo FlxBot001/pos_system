@@ -42,14 +42,18 @@ const BottomNav = () => {
             </button>
             <button
                 onClick={() => navigate("/orders")}
-                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]"
+                className={`flex items-center justify-center font-bold ${
+                    isActive("/orders") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                } w-[300px] rounded-[20px]`}
             >
                 <MdOutlineReorder size={20} className="mr-4 inline" />
                 <p>Orders</p>
             </button>
             <button
                 onClick={() => navigate("/tables")}
-                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]"
+                className={`flex items-center justify-center font-bold ${
+                    isActive("/tables") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                } w-[300px] rounded-[20px]`}
             >
                 <MdTableBar size={20} className="mr-2 inline" />
                 <p>Tables</p>
@@ -60,8 +64,9 @@ const BottomNav = () => {
             </button>
 
             <button
+                disabled={isActive("/tables")}
                 onClick={openModal}
-                className="absolute bottom-5 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
+                className="absolute bottom-6 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
             >
                 <BiSolidDish size={30} />
             </button>
