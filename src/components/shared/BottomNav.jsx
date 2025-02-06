@@ -101,7 +101,10 @@ const BottomNav = () => {
                 </div>
 
                 {/* Sumit BUtton */}
-                <button className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]">
+                <button 
+                onClick={() => navigate("/tables")}
+                className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]"
+                >
                     Create Order
                 </button>
             </Modal>
