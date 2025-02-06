@@ -2,7 +2,7 @@ import React from 'react'
 import { FaNotesMedical } from 'react-icons/fa'
 import { RiDeleteBin2Fill } from 'react-icons/ri'
 
-const CartItems = () => {
+const CartInfo = () => {
     return (
         <div className="px-4 py-2">
             <h1 className="text-lg font-semibold tracking-wide text-[#e4e4e4]">
@@ -40,4 +40,4 @@ const CartItems = () => {
     )
 }
 
-export default CartItems
+export default CartInfo

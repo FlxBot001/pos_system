@@ -7,7 +7,8 @@ import BottomNav from '../components/shared/BottomNav';
 import { RiDeleteBin2Fill } from 'react-icons/ri';
 import { FaNotesMedical } from 'react-icons/fa6';
 import CustomerInfo from '../components/menu/CustomerInfo';
-import CartItems from '../components/menu/CartItems';
+import CartItems from '../components/menu/CartInfo';
+import CartInfo from '../components/menu/CartInfo';
 
 const Menu = () => {
 
@@ -48,7 +49,7 @@ const Menu = () => {
         <CustomerInfo />
         
         {/* Cart Items */}
-        <CartItems />
+        <CartInfo />
 
         {/* Bills */}
       </div>
