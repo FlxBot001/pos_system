@@ -5,31 +5,31 @@ const initialState = {
     customerPhone: "",
     guests: 0,
     tableNo: ""
-}
+};
 
 const customerSlice = createSlice({
-    name : "customer",
+    name: "customer",
     initialState,
-    reducers : {
+    reducers: {
         setCustomer: (state, action) => {
-            const {name, phone, guests} = action.payload;
-            state.customerName = name;
-            state.customerPhone = phone;
+            const { customerName, customerPhone, guests } = action.payload;
+            state.customerName = customerName;
+            state.customerPhone = customerPhone;
             state.guests = guests;
         },
 
         removeCustomer: (state) => {
-            state.customerName = "",
-            state.customerPhone = "",
-            state.guests = 0,
-            state.tableNo = ""
+            state.customerName = "";
+            state.customerPhone = "";
+            state.guests = 0;
+            state.tableNo = "";
         },
 
         updateTable: (state, action) => {
-            state.tableNo = action.payload.tableNo;
+            state.tableNo = action.payload;
         }
     }
-})
+});
 
-export const {setCustomer, removeCustomer, updateTable} = customerSlice.actions;
+export const { setCustomer, removeCustomer, updateTable } = customerSlice.actions;
 export default customerSlice.reducer;
