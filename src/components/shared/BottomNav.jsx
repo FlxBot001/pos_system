@@ -34,7 +34,11 @@ const BottomNav = () => {
 
     const handleCreateOrder = () => {
         //send the data to store
-        dispatch()
+        dispatch(setCustomer({
+            name,
+            phone,
+            guests: guestCount
+        }))
         navigate("/tables");
     }
 
