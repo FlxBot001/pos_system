@@ -7,56 +7,53 @@ import { useNavigate } from 'react-router-dom'
 import Modal from '../shared/Modal'
 
 const BottomNav = () => {
-
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
 
     const navigate = useNavigate();
+
     return (
-        <div className="fixed bottom-0 left-0 right-0 p-2 flex justify-around bg-[#262626] h-15">
+        <div className="fixed bottom-0 left-0 right-0 p-2 flex justify-around bg-[#262626] h-16 shadow-lg">
             <button
                 onClick={() => navigate("/")}
-                className='flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[200px] bg-[#343434] rounded-[20px]'
+                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px] bg-[#343434] rounded-lg py-2"
             >
-                <FaHome className='inline mr-4 size={20}}' />
+                <FaHome size={20} className="mr-2 inline" />
                 <p>Home</p>
             </button>
             <button
                 onClick={() => navigate("/orders")}
-                className='flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[200px]'
+                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]"
             >
-                <MdOutlineReorder className='inline mr-4 size={20}' />
+                <MdOutlineReorder size={20} className="mr-4 inline" />
                 <p>Orders</p>
             </button>
             <button
                 onClick={() => navigate("/tables")}
-                className='flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[200px]'>
-                <MdTableBar className='inline mr-4 size={20}' />
+                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]"
+            >
+                <MdTableBar size={20} className="mr-2 inline" />
                 <p>Tables</p>
             </button>
-            <button className='flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[200px]'>
-                <CiCircleMore className='inline mr-4 size={20}' />
+            <button className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]">
+                <CiCircleMore size={20} className="mr-2 inline" />
                 <p>More</p>
             </button>
 
             <button
                 onClick={openModal}
-                className='cursor-pointer absolute bottom-5 bg-[#F6B100] text-[#f5f5f5] rounded-full p-3 items-center'
+                className="absolute top-5 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
             >
                 <BiSolidDish size={30} />
             </button>
 
             {/* Modal */}
-            <Modal
-                isOpen={isModalOpen}
-                onClick={closeModal}
-                title="Create Order"
-            >
-
+            <Modal isOpen={isModalOpen} onClose={closeModal} title="Create Order">
+                <p className="text-[#f5f5f5]">This is the modal content.</p>
             </Modal>
         </div>
-    )
+    );
 }
 
-export default BottomNav
+export default BottomNav;
