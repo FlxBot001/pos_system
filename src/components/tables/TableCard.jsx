@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom'
 const TableCard = ({
     name,
     status,
-    initials
+    initials,
+    seats
 }) => {
     const navigate = useNavigate();
 
@@ -35,6 +36,12 @@ const TableCard = ({
                 <h1 style={{ backgroundColor: getRandomBG() }} className="text-white rounded-full p-5 text-2xl">
                     {initials}
                 </h1>
+            </div>
+            {/* Seats */}
+            <div className="text-xs text-[#ababab]">
+                Seats: <span className="text-[#f5f5f5]">
+                    {seats}
+                </span>
             </div>
         </div>
     );
