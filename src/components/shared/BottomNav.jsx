@@ -50,7 +50,19 @@ const BottomNav = () => {
 
             {/* Modal */}
             <Modal isOpen={isModalOpen} onClose={closeModal} title="Create Order">
-                <p className="text-[#f5f5f5]">This is the modal content.</p>
+                <div className="">
+                    <label className="block text-[#ababab] mb-2 text-sm font-medium">
+                        Customer Name
+                    </label>
+                    <div className="flex items-center rounded-lg p-3 px-4 bg-[#1f1f1f]">
+                        <input 
+                        type="text" 
+                        name=""
+                        className="bg-transparent flex-1 text-white focus:outline-none" 
+                        />
+                    </div>
+                </div>
+                
             </Modal>
         </div>
     );
