@@ -60,7 +60,7 @@ const MenuContainer = () => {
                             <h1 className="text-lg font-semibold text-[#f5f5f5]">
                                 {menu.name}
                             </h1>
-                            <button className="bg-[#02ca3a] cursor-pointer text-2xl text-[#02ca3a] p-2 rounded-lg">
+                            <button className="bg-[#1aff5b] cursor-pointer text-2xl text-[#005e1b] p-2 rounded-lg">
                                 <FaOpencart 
                                     className="text-2xl"
                                     size={20}
