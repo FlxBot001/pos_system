@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import BackButton from '../components/shared/BackButton'
-import { FaUserCircle } from 'react-icons/fa';
+import { MdRestaurantMenu } from 'react-icons/md';
+import MenuContainer from '../components/menu/MenuContainer';
 
 const Menu = () => {
 
@@ -20,19 +21,22 @@ const Menu = () => {
           </div>
           <div className="flex items-center justify-around gap-4">
             <div className='flex items-center gap-3 cursor-pointer'>
-              <FaUserCircle className="text-[#f5f5f5] text-4xl" />
+              <MdRestaurantMenu className="text-[#f5f5f5] text-4xl" />
               <div className='flex flex-col items-start'>
                 <h1
                   className='text-md text-[#f5f5f5] font-semibold'
                 >
                   Customer Name
                 </h1>
-                <p className='text-xs text-[#ababab] font-medium'>Admin</p>
+                <p className='text-xs text-[#ababab] font-medium'>Table No: 2</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Menu Container Component */}
+      <MenuContainer />
       {/* Right Div */}
       <div className="flex-[1] bg-blue-500 h-full">
         Right
