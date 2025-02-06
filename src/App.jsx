@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Home, Auth, Orders} from './pages';
+import {Home, Auth, Orders, Menu} from './pages';
 import Header from './components/shared/Header';
 import Tables from './pages/Tables';
 

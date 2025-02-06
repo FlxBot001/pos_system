@@ -40,6 +40,7 @@ const Tables = () => {
           filteredTables.map((table) => (
             <TableCard
               key={table.id}
+              id={table.id}
               name={table.name}
               status={table.status}
               initials={table.initial} 
