@@ -7,14 +7,17 @@ import { MdOutlineReorder, MdTableBar } from 'react-icons/md'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Modal from '../shared/Modal'
 import { useDispatch } from 'react-redux'
+import { setCustomer } from '../redux/slices/customerSlice';
+
 
 const BottomNav = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [guestCount, setGuestCount] = useState(0);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
-    const [name, setName] = useState();
-    const [phone, setPhone] = useState();
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -149,6 +152,7 @@ const BottomNav = () => {
                 {/* Sumit BUtton */}
                 <button
                     onClick={handleCreateOrder}
+                    disabled={!name || !phone}
                     className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]"
                 >
                     Create Order
