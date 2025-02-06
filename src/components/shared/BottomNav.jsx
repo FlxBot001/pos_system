@@ -8,7 +8,6 @@ import Modal from '../shared/Modal'
 
 const BottomNav = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // eslint-disable-next-line no-unused-vars
     const [guestCount, setGuestCount] = useState(0);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -57,7 +56,7 @@ const BottomNav = () => {
 
             <button
                 onClick={openModal}
-                className="absolute top-5 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
+                className="absolute bottom-5 bg-[#F6B100] text-[#f5f5f5] rounded-full p-4 shadow-lg"
             >
                 <BiSolidDish size={30} />
             </button>
