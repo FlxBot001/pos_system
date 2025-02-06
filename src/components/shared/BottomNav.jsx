@@ -16,7 +16,7 @@ const BottomNav = () => {
     const navigate = useNavigate();
 
     const increment = () => {
-        if (guestCount >= 10) {
+        if (guestCount < 6) {
             setGuestCount(guestCount + 1);
         }
     }
@@ -73,7 +73,7 @@ const BottomNav = () => {
                         <input 
                         type="text" 
                         name=""
-                        placeholder="EEnter customer phonenter customer name"
+                        placeholder="Enter customer name"
                         id=""
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         />
