@@ -59,6 +59,24 @@ const BottomNav = () => {
                         <input 
                         type="text" 
                         name=""
+                        placeholder="Enter customer name"
+                        id=""
+                        className="bg-transparent flex-1 text-white focus:outline-none" 
+                        />
+                    </div>
+                </div>
+
+                {/* Input customer phone */}
+                <div className="">
+                    <label className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
+                        Customer Phone
+                    </label>
+                    <div className="flex items-center rounded-lg mt-2 p-3 px-4 bg-[#1f1f1f]">
+                        <input 
+                        type="number" 
+                        name=""
+                        placeholder="+254-123456789"
+                        id=""
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         />
                     </div>
@@ -81,6 +99,11 @@ const BottomNav = () => {
                         </button>
                     </div>
                 </div>
+
+                {/* Sumit BUtton */}
+                <button className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]">
+                    Create Order
+                </button>
             </Modal>
         </div>
     );
