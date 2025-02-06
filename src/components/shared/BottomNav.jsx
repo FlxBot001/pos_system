@@ -11,9 +11,12 @@ const BottomNav = () => {
     const [guestCount, setGuestCount] = useState(0);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+    const [name, setName] = useState();
+    const [phone, setPhone] = useState();
 
     const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
 
     const increment = () => {
         if (guestCount < 6) {
@@ -29,13 +32,18 @@ const BottomNav = () => {
 
     const isActive = (path) => location.pathname === path;
 
+    const handleCreateOrder = () => {
+        //send the data to store
+        dispatch()
+        navigate("/tables");
+    }
+
     return (
         <div className="fixed bottom-0 left-0 right-0 p-2 flex justify-around bg-[#262626] h-16 shadow-lg">
             <button
                 onClick={() => navigate("/")}
-                className={`flex items-center justify-center font-bold ${
-                    isActive("/") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
-                } w-[300px] rounded-[20px]`}
+                className={`flex items-center justify-center font-bold ${isActive("/") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                    } w-[300px] rounded-[20px]`}
             >
                 <FaHome size={20} className="mr-2 inline" />
                 <p>Home</p>
@@ -43,9 +51,8 @@ const BottomNav = () => {
 
             <button
                 onClick={() => navigate("/orders")}
-                className={`flex items-center justify-center font-bold ${
-                    isActive("/orders") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
-                } w-[300px] rounded-[20px]`}
+                className={`flex items-center justify-center font-bold ${isActive("/orders") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                    } w-[300px] rounded-[20px]`}
             >
                 <MdOutlineReorder size={20} className="mr-4 inline" />
                 <p>Orders</p>
@@ -53,9 +60,8 @@ const BottomNav = () => {
 
             <button
                 onClick={() => navigate("/tables")}
-                className={`flex items-center justify-center font-bold ${
-                    isActive("/tables") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
-                } w-[300px] rounded-[20px]`}
+                className={`flex items-center justify-center font-bold ${isActive("/tables") ? "text-[#f5f5f5] bg-[#343434]" : "text-[#ababab]"
+                    } w-[300px] rounded-[20px]`}
             >
                 <MdTableBar size={20} className="mr-2 inline" />
                 <p>Tables</p>
@@ -65,7 +71,7 @@ const BottomNav = () => {
                 <CiCircleMore size={20} className="mr-2 inline" />
                 <p>More</p>
             </button>
-            
+
             <button
                 disabled={isActive("/tables") || isActive("/menu")}
                 onClick={openModal}
@@ -82,12 +88,14 @@ const BottomNav = () => {
                         Customer Name
                     </label>
                     <div className="flex items-center rounded-lg p-3 px-4 bg-[#1f1f1f]">
-                        <input 
-                        type="text" 
-                        name=""
-                        placeholder="Enter customer name"
-                        id=""
-                        className="bg-transparent flex-1 text-white focus:outline-none" 
+                        <input
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            type="text"
+                            name=""
+                            placeholder="Enter customer name"
+                            id=""
+                            className="bg-transparent flex-1 text-white focus:outline-none"
                         />
                     </div>
                 </div>
@@ -98,12 +106,14 @@ const BottomNav = () => {
                         Customer Phone
                     </label>
                     <div className="flex items-center rounded-lg mt-2 p-3 px-4 bg-[#1f1f1f]">
-                        <input 
-                        type="number" 
-                        name=""
-                        placeholder="+254-123456789"
-                        id=""
-                        className="bg-transparent flex-1 text-white focus:outline-none" 
+                        <input
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            type="number"
+                            name=""
+                            placeholder="+254-123456789"
+                            id=""
+                            className="bg-transparent flex-1 text-white focus:outline-none"
                         />
                     </div>
                 </div>
@@ -114,26 +124,26 @@ const BottomNav = () => {
                         Guest
                     </label>
                     <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-[#1f1f1f]">
-                        <button 
-                        onClick={decrement}
-                        className="text-yellow-500 text-2xl">
+                        <button
+                            onClick={decrement}
+                            className="text-yellow-500 text-2xl">
                             &minus;
                         </button>
                         <span className="text-white">
                             {guestCount} People
                         </span>
-                        <button 
-                        onClick={increment}
-                        className="text-yellow-500 text-2xl">
+                        <button
+                            onClick={increment}
+                            className="text-yellow-500 text-2xl">
                             &#43;
                         </button>
                     </div>
                 </div>
 
                 {/* Sumit BUtton */}
-                <button 
-                onClick={() => navigate("/tables")}
-                className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]"
+                <button
+                    onClick={handleCreateOrder}
+                    className="w-full text-white hover:bg-yellow-700 rounded-lg py-3 mt-8 bg-[#F6B100]"
                 >
                     Create Order
                 </button>
