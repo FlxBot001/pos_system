@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { GrRadialSelected } from 'react-icons/gr';
 import { menus } from '../../constants/constants';
+import { HiShoppingCart } from 'react-icons/hi';
 
 const MenuContainer = () => {
     const [selected, setSelected] = useState(menus[0]);
@@ -55,11 +56,21 @@ const MenuContainer = () => {
                         className="relative flex flex-col items-start bg-[#1a1a1a] hover:bg-[#2a2a2a] justify-between p-4 rounded-lg cursor-pointer h-[150px]"
                         style={{ zIndex: 5 }}
                     >
-                        <h1 className="text-lg font-semibold text-[#f5f5f5]">{menu.name}</h1>
+                        <div className="flex items-start justify-between w-full">
+                            <h1 className="text-lg font-semibold text-[#f5f5f5]">
+                                {menu.name}
+                            </h1>
+                            <button clFaOpencartassName="bg-[#02ca3a] text-2xl text-white p-2 rounded-lg">
+                                <HiShoppingCart 
+                                    className=""
+                                    size={20}
+                                />
+                            </button>
+                        </div>
                         <div className="flex items-center justify-between w-full">
                             <p className="text-xl text-[#fff] font-bold">${menu.price}</p>
 
-                            {/* Increment/Decrement Buttons */}
+                            {/* Incbaselinerement/Decrement Buttons */}
                             <div className="flex gap-6 items-center justify-between px-4 py-3 rounded-lg bg-[#1f1f1f]">
                                 <button
                                     onClick={() => decrement(menu.id)}
