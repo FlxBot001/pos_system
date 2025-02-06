@@ -3,23 +3,28 @@
 import React from 'react'
 import { getRandomBG } from '../../utils'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
 
 const TableCard = ({
+    key,
     name,
     status,
     initials,
     seats
 }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleClick = () => {
+    const handleClick = (name) => {
         if (status === "Booked") return; // Prevent navigation for booked tables
+        dispatch(updateTable({tableNo: name}))
         navigate(`/menu`);
     };
 
     return (
         <div
-            onClick={handleClick}
+            onClick={() => handleClick(name)}
+            key={key}
             className={`w-[300px] bg-[#262626] p-4 rounded-lg mb-4 shadow-lg ${
                 status === "Booked" ? "cursor-not-allowed opacity-70" : "hover:bg-[#1f1f1f] cursor-pointer"
             }`}

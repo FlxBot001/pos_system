@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState } from 'react'
 import { BiSolidDish } from 'react-icons/bi'
 import { CiCircleMore } from 'react-icons/ci'
@@ -5,6 +6,7 @@ import { FaHome } from 'react-icons/fa'
 import { MdOutlineReorder, MdTableBar } from 'react-icons/md'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Modal from '../shared/Modal'
+import { useDispatch } from 'react-redux'
 
 const BottomNav = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +40,7 @@ const BottomNav = () => {
             name,
             phone,
             guests: guestCount
-        }))
+        }));
         navigate("/tables");
     }
 
