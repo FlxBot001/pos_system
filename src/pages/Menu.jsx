@@ -48,12 +48,15 @@ const Menu = () => {
       <div className="flex-[1] bg-[#1a1a1a] mt-4 mr-3 h-[780px] rounded-lg pt-2">
         {/* Customer INfo */}
         <CustomerInfo />
-        
+        <hr className="border-t-2 border-[#2a2a2a]" />
+
         {/* Cart Items */}
         <CartInfo />
+        <hr className="border-t-2 border-[#2a2a2a]" />
 
         {/* Bills */}
         <BillInfo />
+        <hr className="border-t-2 border-[#2a2a2a]" />
 
       </div>
 
