@@ -50,6 +50,7 @@ const BottomNav = () => {
 
             {/* Modal */}
             <Modal isOpen={isModalOpen} onClose={closeModal} title="Create Order">
+                {/* Input customer name */}
                 <div className="">
                     <label className="block text-[#ababab] mb-2 text-sm font-medium">
                         Customer Name
@@ -62,7 +63,24 @@ const BottomNav = () => {
                         />
                     </div>
                 </div>
-                
+
+                {/* Number of guests */}
+                <div>
+                    <label className="block mb-2 text-[#ababab] mt-3 text-sm font-medium">
+                        Guest
+                    </label>
+                    <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-[#1f1f1f]">
+                        <button className="text-yellow-500 text-2xl">
+                            &minus;
+                        </button>
+                        <span className="text-white">
+                            0 People
+                        </span>
+                        <button className="text-yellow-500 text-2xl">
+                            &#43;
+                        </button>
+                    </div>
+                </div>
             </Modal>
         </div>
     );
