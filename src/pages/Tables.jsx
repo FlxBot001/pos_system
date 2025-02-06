@@ -8,7 +8,10 @@ const Tables = () => {
   const [status, setStatus] = useState('all');
 
   // Filter tables based on status
-  const filteredTables = status === 'all' ? tables : tables.filter(table => table.status === 'Booked');
+  const filteredTables =
+  status === 'all'
+    ? tables
+    : tables.filter(table => table.status.toLowerCase() === status);
 
   return (
     <section className='bg-[#1f1f1f] h-[calc(100vh-5rem)] overflow-hidden'>
@@ -16,7 +19,7 @@ const Tables = () => {
         <div className="flex items-center gap-4">
           <BackButton />
           <h1 className="text-3xl font-bold text-[#f5f5f5] tracking-wider mt-2">
-            Tables
+            TablesMenu
           </h1>
         </div>
 
@@ -26,10 +29,18 @@ const Tables = () => {
             className={`text-lg text-[#ababab] font-semibold px-5 py-2 rounded-lg ${status === "all" ? "bg-[#383838]" : ""}`}>
             All
           </button>
+          {/* Booked Tables */}
           <button
             onClick={() => setStatus('booked')}
             className={`text-lg text-[#ababab] font-semibold px-5 py-2 rounded-lg ${status === "booked" ? "bg-[#383838]" : ""}`}>
             Booked
+          </button>
+
+          {/* Available Tables */}
+          <button
+            onClick={() => setStatus('available')}
+            className={`text-lg text-[#ababab] font-semibold px-5 py-2 rounded-lg ${status === "available" ? "bg-[#383838]" : ""}`}>
+            Available
           </button>
         </div>
       </div>
@@ -40,6 +51,7 @@ const Tables = () => {
           filteredTables.map((table) => (
             <TableCard
               key={table.id}
+              id={table.id}
               name={table.name}
               status={table.status}
               initials={table.initial} 
