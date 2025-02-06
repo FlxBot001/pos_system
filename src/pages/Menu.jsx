@@ -9,6 +9,7 @@ import { FaNotesMedical } from 'react-icons/fa6';
 import CustomerInfo from '../components/menu/CustomerInfo';
 import CartItems from '../components/menu/CartInfo';
 import CartInfo from '../components/menu/CartInfo';
+import BillInfo from '../components/menu/BillInfo';
 
 const Menu = () => {
 
@@ -52,6 +53,8 @@ const Menu = () => {
         <CartInfo />
 
         {/* Bills */}
+        <BillInfo />
+
       </div>
 
       {/* Botom Nan */}
