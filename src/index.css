@@ -1,6 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:wght@100..900&display=swap');
 @import "tailwindcss";
 
+/* Apply default font */
 body {
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth glass effect for header */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Light & Dark Mode Smooth Transitions */
+.dark body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.light body {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+/* Hover Effects */
+.button-hover:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
