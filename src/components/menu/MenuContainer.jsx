@@ -5,6 +5,7 @@ import { GrRadialSelected } from 'react-icons/gr';
 import { menus } from '../../constants/constants';
 import { FaOpencart } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
+import { addItems } from '../../redux/slices/cartSlice';
 
 const MenuContainer = () => {
     const [selected, setSelected] = useState(menus[0]);
@@ -34,21 +35,28 @@ const MenuContainer = () => {
 
     // Add to cart function
     const handleAddToCart = (item) => {
-        // When value is 0, we cannot count
-        if (itemCount === 0) return;
+        const quantity = itemCount[item.id] || 0;
 
-        // else, add to cart
+        // Prevent adding if quantity is 0
+        if (quantity === 0) return;
+
         const { name, price } = item;
         const newObj = {
-            id: new Date(), name,
+            id: new Date().getTime(), // Use timestamp as unique ID
+            name,
             pricePerQuantity: price,
-            quantity: itemCount,
-            price: price * itemCount,
+            quantity: quantity,
+            price: price * quantity,
         };
 
-        dispatch(addItems(newObj));
-        setItemCount(0);
-    }
+        dispatch(addItems(newObj)); // Dispatch action
+
+        // Reset item count only for the added item
+        setItemCount((prev) => ({
+            ...prev,
+            [item.id]: 0,
+        }));
+    };
 
     return (
         <>
