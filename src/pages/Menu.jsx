@@ -1,19 +1,17 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React from 'react'
 import BackButton from '../components/shared/BackButton'
 import { MdRestaurantMenu } from 'react-icons/md';
 import MenuContainer from '../components/menu/MenuContainer';
 import BottomNav from '../components/shared/BottomNav';
-import { RiDeleteBin2Fill } from 'react-icons/ri';
-import { FaNotesMedical } from 'react-icons/fa6';
 import CustomerInfo from '../components/menu/CustomerInfo';
-import CartItems from '../components/menu/CartInfo';
 import CartInfo from '../components/menu/CartInfo';
 import BillInfo from '../components/menu/BillInfo';
+import { useSelector } from 'react-redux';
 
 const Menu = () => {
 
-  const [status, setStatus] = useState('all');
+  const customerData = useSelector(state => state.customer);
 
   return (
     <section className='bg-[#1f1f1f] h-[calc(100vh-5rem)] overflow-hidden flex gap-3'>
@@ -33,9 +31,11 @@ const Menu = () => {
                 <h1
                   className='text-md text-[#f5f5f5] font-semibold'
                 >
-                  Customer Name
+                  {customerData.customerName}
                 </h1>
-                <p className='text-xs text-[#ababab] font-medium'>Table No: 2</p>
+                <p className='text-xs text-[#ababab] font-medium'>
+                  {customerData.tableNo}
+                </p>
               </div>
             </div>
           </div>
