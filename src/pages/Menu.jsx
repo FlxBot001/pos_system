@@ -31,10 +31,10 @@ const Menu = () => {
                 <h1
                   className='text-md text-[#f5f5f5] font-semibold'
                 >
-                  {customerData.customerName}
+                  {customerData.customerName || 'Customer Name'}
                 </h1>
                 <p className='text-xs text-[#ababab] font-medium'>
-                  {customerData.tableNo}
+                  {customerData.tableNo || 'N/A'}
                 </p>
               </div>
             </div>
