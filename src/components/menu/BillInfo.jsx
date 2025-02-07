@@ -19,7 +19,7 @@ const BillInfo = () => {
                     )
                 </p>
                 <h1 className="text-md font-bold text-[#f5f5f5]">
-                    ${total}
+                    ${total.toFixed(2)}
                 </h1>
             </div>
 
@@ -28,7 +28,7 @@ const BillInfo = () => {
                     VAT(16.00%)
                 </p>
                 <h1 className="text-md font-bold text-[#f5f5f5]">
-                    ${tax}
+                    ${tax.toFixed(2)}
                 </h1>
             </div>
 
@@ -37,7 +37,7 @@ const BillInfo = () => {
                     Gross Price
                 </p>
                 <h1 className="text-md font-bold text-[#f5f5f5]">
-                    ${grossPrice}
+                    ${grossPrice.toFixed(2)}
                 </h1>
             </div>
 
