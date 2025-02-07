@@ -7,7 +7,7 @@ import { MdOutlineReorder, MdTableBar } from 'react-icons/md'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Modal from '../shared/Modal'
 import { useDispatch } from 'react-redux'
-import { setCustomer } from '../redux/slices/customerSlice';
+import { setCustomer } from '../../redux/slices/customerSlice';
 
 
 const BottomNav = () => {
@@ -16,7 +16,7 @@ const BottomNav = () => {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState("+254");
+    const [phone, setPhone] = useState("+254 ");
 
 
     const navigate = useNavigate();
@@ -38,14 +38,23 @@ const BottomNav = () => {
     const isActive = (path) => location.pathname === path;
 
     const handleCreateOrder = () => {
-        //send the data to store
-        dispatch(setCustomer({
-            name,
-            phone,
-            guests: guestCount
-        }));
-        navigate("/tables");
-    }
+        if (!name || !phone || guestCount === 0) {
+            alert("Please fill in all fields before proceeding.");
+            return;
+        }
+    
+        try {
+            dispatch(setCustomer({
+                customerName: name,  // Ensure correct property name
+                customerPhone: phone,  // Ensure correct property name
+                guests: guestCount
+            }));
+            navigate("/tables");
+        } catch (error) {
+            console.error("Failed to create order:", error);
+        }
+    };
+   
 
     const handlePhoneChange = (e) => {
         let input = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters

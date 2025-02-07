@@ -26,8 +26,8 @@ const customerSlice = createSlice({
         },
 
         updateTable: (state, action) => {
-            state.tableNo = action.payload;
-        }
+            state.tableNo = action.payload.tableNo; // Fix: Extract tableNo correctly
+        }        
     }
 });
 

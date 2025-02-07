@@ -4,6 +4,7 @@ import React from 'react'
 import { getRandomBG } from '../../utils'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
+import { updateTable } from '../../redux/slices/customerSlice';
 
 const TableCard = ({
     key,
@@ -15,11 +16,11 @@ const TableCard = ({
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const handleClick = (name) => {
+    const handleClick = () => {
         if (status === "Booked") return; // Prevent navigation for booked tables
-        dispatch(updateTable({tableNo: name}))
+        dispatch(updateTable({ tableNo: name })); // Dispatch correct object format
         navigate(`/menu`);
-    };
+    };    
 
     return (
         <div
