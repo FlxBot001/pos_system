@@ -14,35 +14,40 @@ const MenuContainer = () => {
 
     // Increment function
     const increment = (id) => {
+        setItemId(id);
+        if ((itemCount[id] || 0) >= 4) return;
         setItemCount((prevCounts) => ({
             ...prevCounts,
-            [id]: (prevCounts[id] || 0) + 1, // Increment per item
+            [id]: (prevCounts[id] || 0) + 1,
         }));
     };
 
     // Decrement function
     const decrement = (id) => {
+        setItemId(id);
+        if ((itemCount[id] || 0) <= 0) return;
         setItemCount((prevCounts) => ({
             ...prevCounts,
-            [id]: prevCounts[id] > 0 ? prevCounts[id] - 1 : 0, // Prevent negative counts
+            [id]: (prevCounts[id] || 0) - 1,
         }));
     };
 
     // Add to cart function
     const handleAddToCart = (item) => {
         // When value is 0, we cannot count
-        if(itemCount === 0) return;
+        if (itemCount === 0) return;
 
         // else, add to cart
-        const {name, price} = item;
+        const { name, price } = item;
         const newObj = {
-            id: new Date(), name, 
+            id: new Date(), name,
             pricePerQuantity: price,
             quantity: itemCount,
             price: price * itemCount,
         };
 
-        dispatch()
+        dispatch(addItems(newObj));
+        setItemCount(0);
     }
 
     return (
@@ -82,11 +87,11 @@ const MenuContainer = () => {
                             <h1 className="text-lg font-semibold text-[#f5f5f5]">
                                 {item.name}
                             </h1>
-                            <button 
+                            <button
                                 onClick={() => handleAddToCart(item)}
                                 className="bg-[#1aff5b] cursor-pointer text-2xl text-[#005e1b] p-2 rounded-lg"
                             >
-                                <FaOpencart 
+                                <FaOpencart
                                     className="text-2xl"
                                     size={20}
                                 />
