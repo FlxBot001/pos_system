@@ -23,10 +23,10 @@ const CartInfo = () => {
                                 <div className="rounded-lg px-4 py-4 mb-2 bg-[#1f1f1f]">
                                     <div className="flex items-center justify-between">
                                         <h1 className="font-semibold tracking-wide text-md text-[#ababab]">
-                                            Chicken Tikka
+                                            {item.name}
                                         </h1>
                                         <p className="font-semibold text-[#ababab]">
-                                            x2
+                                            x{item.quantity}
                                         </p>
                                     </div>
                                     <div className="flex items-center justify-between mt-3">
@@ -42,7 +42,7 @@ const CartInfo = () => {
                                             />
                                         </div>
                                         <p className="text-md font-bold text-[#f5f5f5]">
-                                            $123
+                                            ${item.price}
                                         </p>
                                     </div>
                                 </div>
