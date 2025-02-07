@@ -54,7 +54,8 @@ const Tables = () => {
               id={table.id}
               name={table.name}
               status={table.status}
-              initials={table.initial} 
+              initials={table.initial}
+              seats={table.seats} 
             />
           ))
         ) : (

@@ -3,22 +3,29 @@
 import React from 'react'
 import { getRandomBG } from '../../utils'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { updateTable } from '../../redux/slices/customerSlice';
 
 const TableCard = ({
+    key,
     name,
     status,
-    initials
+    initials,
+    seats
 }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         if (status === "Booked") return; // Prevent navigation for booked tables
+        dispatch(updateTable({ tableNo: name })); // Dispatch correct object format
         navigate(`/menu`);
-    };
+    };    
 
     return (
         <div
-            onClick={handleClick}
+            onClick={() => handleClick(name)}
+            key={key}
             className={`w-[300px] bg-[#262626] p-4 rounded-lg mb-4 shadow-lg ${
                 status === "Booked" ? "cursor-not-allowed opacity-70" : "hover:bg-[#1f1f1f] cursor-pointer"
             }`}
@@ -35,6 +42,12 @@ const TableCard = ({
                 <h1 style={{ backgroundColor: getRandomBG() }} className="text-white rounded-full p-5 text-2xl">
                     {initials}
                 </h1>
+            </div>
+            {/* Seats */}
+            <div className="text-xs text-[#ababab]">
+                Seats: <span className="text-[#f5f5f5]">
+                    {seats}
+                </span>
             </div>
         </div>
     );
