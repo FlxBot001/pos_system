@@ -16,7 +16,7 @@ const BottomNav = () => {
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone, setPhone] = useState("+254");
 
 
     const navigate = useNavigate();
@@ -46,6 +46,19 @@ const BottomNav = () => {
         }));
         navigate("/tables");
     }
+
+    const handlePhoneChange = (e) => {
+        let input = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+        if (input.startsWith("254")) {
+            input = `+${input}`; // Ensure +254 remains at the start
+        } else {
+            input = "+254" + input.slice(3); // Force +254 prefix
+        }
+
+        if (input.length <= 13) { // Restrict to +254 plus 9 digits (total 13 characters)
+            setPhone(input);
+        }
+    };
 
     return (
         <div className="fixed bottom-0 left-0 right-0 p-2 flex justify-around bg-[#262626] h-16 shadow-lg">
@@ -117,11 +130,11 @@ const BottomNav = () => {
                     <div className="flex items-center rounded-lg mt-2 p-3 px-4 bg-[#1f1f1f]">
                         <input
                             value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            type="number"
-                            name=""
+                            onChange={handlePhoneChange}
+                            type="tel"
+                            pattern="\+254[0-9]{9}"
                             placeholder="+254-123456789"
-                            id=""
+                            maxLength={13}
                             className="bg-transparent flex-1 text-white focus:outline-none"
                         />
                     </div>
