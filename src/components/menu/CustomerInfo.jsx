@@ -1,11 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const CustomerInfo = () => {
+    const customerData = useSelector(state => state.customer);
+
     return (
         <div className="flex items-center justify-between px-4 py-3">
             <div className="flex flex-col items-start">
                 <h1 className="text-md font-semibold tracking-wide text-[#f5f5f5]">
-                    Customer Name
+                    {customerData.customerName}
                 </h1>
                 <p className="text-xs font-medium mt-1 text-[#ababab]">
                     #101/Dine in
