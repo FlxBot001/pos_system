@@ -98,7 +98,10 @@ const BottomNav = () => {
                 <p>Tables</p>
             </button>
 
-            <button className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]">
+            <button 
+                onClick={() => navigate("/more")}
+                className="flex items-center justify-center cursor-pointer text-[#f5f5f5] w-[150px]">
+                
                 <CiCircleMore size={20} className="mr-2 inline" />
                 <p>More</p>
             </button>
