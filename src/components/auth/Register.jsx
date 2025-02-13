@@ -17,6 +17,13 @@ const Register = () => {
         });
     }
 
+    const handleRoleSelection = (selectedRole) => {
+        setFormData({
+            ...formData,
+            role: selectedRole
+        })
+    }
+    name
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData)
@@ -24,7 +31,7 @@ const Register = () => {
 
   return (
     <div>
-        <form action="">
+        <form onSubmit={handleSubmit} >
             {/* Name */}
             <div className="">
                 <label htmlFor="" className="block text-[#ababab] mb-2 text-sm font-medium">
@@ -34,6 +41,8 @@ const Register = () => {
                     <input 
                         type="text" 
                         name='name'
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder='Enter Employee name'
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         required
@@ -50,6 +59,8 @@ const Register = () => {
                     <input 
                         type="email" 
                         name='email'
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder='Enter Employee email'
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         required
@@ -66,6 +77,8 @@ const Register = () => {
                     <input 
                         type="number" 
                         name='phone'
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder='Enter phone number'
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         required
@@ -82,6 +95,8 @@ const Register = () => {
                     <input 
                         type="password" 
                         name='password'
+                        value={formData.password}
+                        onChange={handleChange}
                         placeholder='Enter password'
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         required
@@ -91,7 +106,7 @@ const Register = () => {
 
             {/* Role */}
             <div className="">
-                <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
+                <label className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                         Choose your Role
                 </label>
 
