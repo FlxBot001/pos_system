@@ -84,15 +84,22 @@ const Register = () => {
                     ].map((role) => {
                         return (
                             <button 
-                        key={role}
-                        type='button'
-                        className="px-4 py-3 w-full text-[#ababab] bg-[#1f1f1f] rounded-lg">
-                            {role}
-                        </button>
+                                key={role}
+                                type='button'
+                                className="px-4 py-3 w-full text-[#ababab] bg-[#1f1f1f] rounded-lg">
+                                    {role}
+                            </button>
                         )
                     })}
                 </div>
             </div>
+
+            <button
+                    type='submit'
+                    className="bg-yellow-400 w-full mt-6 py-3 text-lg text-gray-900 font-bold rounded-lg"
+            >
+                Sign up
+            </button>
         </form>
     </div>
   )
