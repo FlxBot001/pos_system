@@ -1,22 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { useMutation } from "@tanstack/react-query";
-
-const login = async (reqData) => {
-    const response = await fetch("/api/login", {  // Change URL to your API endpoint
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reqData),
-    });
-
-    if (!response.ok) {
-        throw new Error("Login failed");
-    }
-
-    return response.json();
-};
-
+import { login } from '../../https/index';
 
 const Login = () => {
 
@@ -24,18 +9,6 @@ const Login = () => {
         email: "",
         password: ""
     });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    }
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        loginMutation.mutate(formData);
-    }
 
     const loginMutation = useMutation({
         mutationFn: (reqData) => login(reqData),
@@ -48,6 +21,20 @@ const Login = () => {
             console.log(error);
         }
     })
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    }
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("sending data:", formData);
+        loginMutation.mutate(formData);
+    }
+
 
   return (
     <div>
@@ -94,7 +81,7 @@ const Login = () => {
                     type='submit'
                     className="bg-yellow-400 w-full mt-6 py-3 text-lg text-gray-900 font-bold rounded-lg"
             >
-                Sign up
+                Sign in
             </button>
         </form>
     </div>
