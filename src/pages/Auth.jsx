@@ -2,6 +2,7 @@ import React from 'react';
 import restaurant from "../assets/restaurant-img.jpg"
 import logo1 from "../assets/logo1.png"
 import Register from '../components/auth/Register';
+import Login from '../components/auth/Login';
 
 const Auth = () => {
   return (
@@ -50,7 +51,9 @@ const Auth = () => {
 
         {/* Components */}
 
-        <Register />
+        {/* <Register /> */}
+
+        <Login />
 
         <div className="flex justify-center mt-6">
           <p className="text-sm text-[#ababab]">

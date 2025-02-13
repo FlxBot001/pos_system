@@ -93,7 +93,7 @@ const Register = () => {
                     })}
                 </div>
             </div>
-
+            {/* Submit button */}
             <button
                     type='submit'
                     className="bg-yellow-400 w-full mt-6 py-3 text-lg text-gray-900 font-bold rounded-lg"
