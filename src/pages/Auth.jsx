@@ -46,7 +46,7 @@ const Auth = () => {
         </div>
 
         <h2 className="text-4xl text-center mt-10 font-semibold text-yellow-400 mb-10">
-          Employee Registration
+          Employee Login
         </h2>
 
         {/* Components */}
@@ -57,11 +57,11 @@ const Auth = () => {
 
         <div className="flex justify-center mt-6">
           <p className="text-sm text-[#ababab]">
-            Already have an account?
+            Do not have an account?
             <a 
             href="#" 
             className="text-yellow-400 font-semibold hover:underline">
-              Sign in
+              Sign up
             </a>
           </p>
         </div>
