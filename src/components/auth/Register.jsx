@@ -122,6 +122,7 @@ const Register = () => {
                             <button 
                                 key={role}
                                 type='button'
+                                onClick={() => handleRoleSelection(role)}
                                 className="px-4 py-3 w-full text-[#ababab] bg-[#1f1f1f] rounded-lg">
                                     {role}
                             </button>
