@@ -1,6 +1,23 @@
 import React, { useState } from 'react';
 import { useMutation } from "@tanstack/react-query";
 
+const login = async (reqData) => {
+    const response = await fetch("/api/login", {  // Change URL to your API endpoint
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reqData),
+    });
+
+    if (!response.ok) {
+        throw new Error("Login failed");
+    }
+
+    return response.json();
+};
+
+
 const Login = () => {
 
     const[formData, setFormData] = useState({
@@ -59,7 +76,7 @@ const Login = () => {
                 <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                     Password
                 </label>
-                <div className="flex item-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
+                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
                     <input 
                         type="password" 
                         name='password'
