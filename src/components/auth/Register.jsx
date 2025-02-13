@@ -9,7 +9,7 @@ const Register = () => {
                 <label htmlFor="" className="block text-[#ababab] mb-2 text-sm font-medium">
                     Employee Name
                 </label>
-                <div className="flex item-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
+                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
                     <input 
                         type="text" 
                         name='name'
@@ -25,7 +25,7 @@ const Register = () => {
                 <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                     Employee Email
                 </label>
-                <div className="flex item-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
+                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
                     <input 
                         type="email" 
                         name='email'
@@ -41,7 +41,7 @@ const Register = () => {
                 <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                     Employee Phone
                 </label>
-                <div className="flex item-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
+                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
                     <input 
                         type="number" 
                         name='phone'
