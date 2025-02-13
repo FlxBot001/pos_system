@@ -23,7 +23,7 @@ const Register = () => {
             role: selectedRole
         })
     }
-    name
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData)
@@ -69,7 +69,7 @@ const Register = () => {
             </div>
 
             {/* Phone */}
-            <div className="">
+            <div className="">                    
                 <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                     Employee Phone
                 </label>
@@ -123,7 +123,7 @@ const Register = () => {
                                 key={role}
                                 type='button'
                                 onClick={() => handleRoleSelection(role)}
-                                className="px-4 py-3 w-full text-[#ababab] bg-[#1f1f1f] rounded-lg">
+                                className={`px-4 py-3 w-full text-[#ababab] bg-[#1f1f1f] rounded-lg ${formData.role === role ? "bg-amber-950" : ""}`}>
                                     {role}
                             </button>
                         )
