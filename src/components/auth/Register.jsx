@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Register = () => {
+    
+    const[formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        password: "",
+        role: ""
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData)
+    }
+
   return (
     <div>
         <form action="">
