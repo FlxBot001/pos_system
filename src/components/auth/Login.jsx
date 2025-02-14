@@ -34,7 +34,11 @@ const Login = () => {
         },
 
         onError: (error) => {
-            console.log(error);
+            const { response } = error;
+            enqueueSnackbar(
+                response.data.message,
+                { variant: "error" }
+            );
         }
     })
 
