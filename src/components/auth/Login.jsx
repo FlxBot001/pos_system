@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import { useMutation } from "@tanstack/react-query";
 import { login } from '../../https/index';
 import { enqueueSnackbar } from "notistack";
+import { useDispatch } from "react-redux";
+import { setUser } from '../../redux/slices/userSlice';
 
 const Login = () => {
 
+    const dispatch = useDispatch();
     const[formData, setFormData] = useState({
         email: "",
         password: "",
@@ -31,6 +34,22 @@ const Login = () => {
         onSuccess: (res) => {
             const { data } = res;
             console.log(data);
+            const {
+                _id,
+                name,
+                email,
+                phone,
+                role
+            } = data.data;
+            dispatch(
+                setUser({
+                    _id,
+                    name,
+                    email,
+                    phone,
+                    role
+                })
+            )
         },
 
         onError: (error) => {
