@@ -2,25 +2,16 @@
 import React, { useState } from 'react';
 import { useMutation } from "@tanstack/react-query";
 import { login } from '../../https/index';
+import { enqueueSnackbar } from "notistack";
 
 const Login = () => {
 
     const[formData, setFormData] = useState({
         email: "",
-        password: ""
+        password: "",
     });
 
-    const loginMutation = useMutation({
-        mutationFn: (reqData) => login(reqData),
-        onSuccess: (res) => {
-            const { data } = res;
-            console.log(data);
-        },
 
-        onError: (error) => {
-            console.log(error);
-        }
-    })
 
     const handleChange = (e) => {
         setFormData({
@@ -34,6 +25,18 @@ const Login = () => {
         console.log("sending data:", formData);
         loginMutation.mutate(formData);
     }
+
+    const loginMutation = useMutation({
+        mutationFn: (reqData) => login(reqData),
+        onSuccess: (res) => {
+            const { data } = res;
+            console.log(data);
+        },
+
+        onError: (error) => {
+            console.log(error);
+        }
+    })
 
 
   return (
