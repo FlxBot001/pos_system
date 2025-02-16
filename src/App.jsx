@@ -72,35 +72,65 @@ const router = createBrowserRouter([
   },
   {
     path: "/analytics/customers",
-    element: <Layout><h1 className="title">Customers</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Customers
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/new-customer",
-    element: <Layout><h1 className="title">New Customer</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        New Customer
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/verified-customer",
-    element: <Layout><h1 className="title">Verified Customer</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Verified Customer
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/products",
-    element: <Layout><h1 className="title">Products</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Products
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/new-product",
-    element: <Layout><h1 className="title">New Product</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        New Product
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/inventory",
-    element: <Layout><h1 className="title">Inventory</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Inventory
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/settings",
-    element: <Layout><h1 className="title">Settings</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Settings
+      </h1>
+    </Layout>,
   },
   {
     path: "*",
-    element: <Layout><h1>Not Found</h1></Layout>,
+    element: <Layout>
+      <h1>Not Found</h1>
+    </Layout>,
   },
 ]);
 
