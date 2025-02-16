@@ -2,8 +2,9 @@
 import React, { forwardRef } from 'react'
 import { cn } from '../utils/cn';
 import logo from "../assets/logo1.png"
+import PropTypes from "prop-types";
 
-const Sidebar = forwardRef(({}, ref) => {
+const Sidebar = forwardRef(({ collapsed }, ref) => {
   return (
     <aside 
       ref={ref}
@@ -12,7 +13,13 @@ const Sidebar = forwardRef(({}, ref) => {
       )}
     >
       <div className="flex gap-x-3 p-3">
-        <img src={logo} alt="forkly" />
+        <img 
+          src={logo} 
+          height={45} 
+          width={45} 
+          alt="forkly" 
+        />
+        {!collapsed && <p className="text-2xl mt-1.5 font-bold text-slate-900 transition-colors dark:text-slate-50">ForkLy</p>}
       </div>
     </aside>
   );
@@ -20,4 +27,8 @@ const Sidebar = forwardRef(({}, ref) => {
 
 Sidebar.displayName = 'Sidebar';
 
-// export { Sidebar };
+Sidebar.propTypes = {
+  collapsed: PropTypes.bool,
+};
+
+export { Sidebar };
