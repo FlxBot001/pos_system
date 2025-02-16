@@ -7,6 +7,10 @@ import Header from "./components/shared/Header";
 import Tables from "./pages/Tables";
 import { ThemeProvider } from "./contexts/theme-context";
 
+// Dashboard
+import Layout from "./routes/layout";
+import DashboardPage from "./routes/dashboard/page";
+
 
 function MLayout({ children }) {
   return (
@@ -25,7 +29,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MLayout>
-      <Home />
+      <Layout />
+    </MLayout>,
+  },
+  {
+    path: "/",
+    element: <MLayout>
+      <DashboardPage />
     </MLayout>,
   },
   {
