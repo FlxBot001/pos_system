@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import restaurant from "../assets/restaurant-img.jpg"
 import logo1 from "../assets/logo1.png"
@@ -27,7 +28,7 @@ const Auth = () => {
 
         {/* Quote at Bottom */}
         <blockquote className="absolute bottom-10 px-8 mb-10 text-2xl italic text-white">
-          &quot;Serve customers the best food with prompt and friendly service in a welcoming atmosphere, and the&apos;ll keep coming back."
+          &quot;Serve customers the best food with prompt and friendly service in a welcoming atmosphere, and they&apos;ll keep coming back.&quot;
           <br />
           <span className="mt-4 block text-yellow-400">
             Founder of ForkLy.
@@ -57,7 +58,7 @@ const Auth = () => {
 
         <div className="flex justify-center mt-6">
           <p className="text-sm text-[#ababab]">
-            {isRegister ? "Already have an account?" : "Do not have an account?"}
+            {isRegister ? "Already have an account?  " : "Do not have an account?  "}
             <a 
               href="#" 
               onClick={() => setIsRegister(!isRegister)}
