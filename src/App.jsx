@@ -24,7 +24,9 @@ Layout.propTypes = {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout><Home /></Layout>,
+    element: <Layout>
+      <Home />
+    </Layout>,
   },
   {
     path: "/auth",
@@ -32,27 +34,41 @@ const router = createBrowserRouter([
   },
   {
     path: "/orders",
-    element: <Layout><Orders /></Layout>,
+    element: <Layout>
+      <Orders />
+    </Layout>,
   },
   {
     path: "/tables",
-    element: <Layout><Tables /></Layout>,
+    element: <Layout>
+      <Tables />
+    </Layout>,
   },
   {
     path: "/menu",
-    element: <Layout><Menu /></Layout>,
+    element: <Layout>
+      <Menu />
+    </Layout>,
   },
   {
     path: "/rooms",
-    element: <Layout><Rooms /></Layout>,
+    element: <Layout>
+      <Rooms />
+    </Layout>,
   },
   {
     path: "/more",
-    element: <Layout><More /></Layout>,
+    element: <Layout>
+      <More />
+    </Layout>,
   },
   {
     path: "/analytics/reports",
-    element: <Layout><h1 className="title">Reports</h1></Layout>,
+    element: <Layout>
+      <h1 className="title">
+        Reports
+      </h1>
+    </Layout>,
   },
   {
     path: "/analytics/customers",
