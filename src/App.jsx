@@ -1,38 +1,99 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-undef */
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import {Home, Auth, Orders, Menu, Rooms, More} from './pages';
-import Header from './components/shared/Header';
-import Tables from './pages/Tables';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Home, Auth, Orders, Menu, Rooms, More } from "./pages";
+import Header from "./components/shared/Header";
+import Tables from "./pages/Tables";
+import { ThemeProvider } from "./contexts/theme-context";
 
-function Layout() {
-  const location = useLocation();
-  const hideHeaderRoutes = ["/auth"];
-  
+
+function Layout({ children }) {
   return (
     <>
-      {!hideHeaderRoutes.includes(location.pathname) && <Header />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/tables" element={<Tables />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/more" element={<More />} />
-      </Routes>
+      <Header />
+      {children}
     </>
-  )
+  );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout><Home /></Layout>,
+  },
+  {
+    path: "/auth",
+    element: <Auth />,
+  },
+  {
+    path: "/orders",
+    element: <Layout><Orders /></Layout>,
+  },
+  {
+    path: "/tables",
+    element: <Layout><Tables /></Layout>,
+  },
+  {
+    path: "/menu",
+    element: <Layout><Menu /></Layout>,
+  },
+  {
+    path: "/rooms",
+    element: <Layout><Rooms /></Layout>,
+  },
+  {
+    path: "/more",
+    element: <Layout><More /></Layout>,
+  },
+  {
+    path: "/analytics/reports",
+    element: <Layout><h1 className="title">Reports</h1></Layout>,
+  },
+  {
+    path: "/analytics/customers",
+    element: <Layout><h1 className="title">Customers</h1></Layout>,
+  },
+  {
+    path: "/analytics/new-customer",
+    element: <Layout><h1 className="title">New Customer</h1></Layout>,
+  },
+  {
+    path: "/analytics/verified-customer",
+    element: <Layout><h1 className="title">Verified Customer</h1></Layout>,
+  },
+  {
+    path: "/analytics/products",
+    element: <Layout><h1 className="title">Products</h1></Layout>,
+  },
+  {
+    path: "/analytics/new-product",
+    element: <Layout><h1 className="title">New Product</h1></Layout>,
+  },
+  {
+    path: "/analytics/inventory",
+    element: <Layout><h1 className="title">Inventory</h1></Layout>,
+  },
+  {
+    path: "/analytics/settings",
+    element: <Layout><h1 className="title">Settings</h1></Layout>,
+  },
+  {
+    path: "*",
+    element: <Layout><h1>Not Found</h1></Layout>,
+  },
+]);
 
 function App() {
   return (
-    <Router>
-      <Layout />
-    </Router>
-  )  
+    <ThemeProvider storageKey="theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
