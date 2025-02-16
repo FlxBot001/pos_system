@@ -8,7 +8,7 @@ import Tables from "./pages/Tables";
 import { ThemeProvider } from "./contexts/theme-context";
 
 
-function Layout({ children }) {
+function MLayout({ children }) {
   return (
     <>
       <Header />
@@ -17,16 +17,16 @@ function Layout({ children }) {
   );
 }
 
-Layout.propTypes = {
+MLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout>
+    element: <MLayout>
       <Home />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/auth",
@@ -34,103 +34,103 @@ const router = createBrowserRouter([
   },
   {
     path: "/orders",
-    element: <Layout>
+    element: <MLayout>
       <Orders />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/tables",
-    element: <Layout>
+    element: <MLayout>
       <Tables />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/menu",
-    element: <Layout>
+    element: <MLayout>
       <Menu />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/rooms",
-    element: <Layout>
+    element: <MLayout>
       <Rooms />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/more",
-    element: <Layout>
+    element: <MLayout>
       <More />
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/reports",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Reports
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/customers",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Customers
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/new-customer",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         New Customer
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/verified-customer",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Verified Customer
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/products",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Products
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/new-product",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         New Product
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/inventory",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Inventory
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "/analytics/settings",
-    element: <Layout>
+    element: <MLayout>
       <h1 className="title">
         Settings
       </h1>
-    </Layout>,
+    </MLayout>,
   },
   {
     path: "*",
-    element: <Layout>
+    element: <MLayout>
       <h1>Not Found</h1>
-    </Layout>,
+    </MLayout>,
   },
 ]);
 
