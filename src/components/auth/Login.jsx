@@ -5,16 +5,21 @@ import { login } from '../../https/index';
 import { enqueueSnackbar } from "notistack";
 import { useDispatch } from "react-redux";
 import { setUser } from '../../redux/slices/userSlice';
+import { EyeIcon, EyeOffIcon } from 'lucide-react';
 
 const Login = () => {
 
+    const [passwordVisible, setPasswordVisible] = useState(false);
     const dispatch = useDispatch();
     const[formData, setFormData] = useState({
         email: "",
         password: "",
     });
 
-
+    const togglePasswordVisibility = () => {
+        console.log(`Password visibility toggled: ${!passwordVisible}`);
+        setPasswordVisible(!passwordVisible);
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -31,28 +36,30 @@ const Login = () => {
 
     const loginMutation = useMutation({
         mutationFn: (reqData) => login(reqData),
+        // if logged in successfully:
         onSuccess: (res) => {
             const { data } = res;
             console.log(data);
-            const {
-                _id,
+            const {  _id,
                 name,
                 email,
                 phone,
                 role
-            } = data.data;
+            } = res?.data || {};
             dispatch(
                 setUser({
                     _id,
                     name,
                     email,
                     phone,
-                    role
+                    role,
+                    isAuth: true,  // Ensure authentication state updates
                 })
-            )
+            );
         },
 
         onError: (error) => {
+            console.log(error);
             const { response } = error;
             enqueueSnackbar(
                 response.data.message,
@@ -85,13 +92,13 @@ const Login = () => {
             </div>
 
             {/* password */}
-            <div className="">
-                <label htmlFor="" className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
+            <div>
+                <label className="block text-[#ababab] mb-2 mt-3 text-sm font-medium">
                     Password
                 </label>
-                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f]">
+                <div className="flex items-center rounded-lg p-5 px-4 bg-[#1f1f1f] relative">
                     <input 
-                        type="password" 
+                        type={passwordVisible ? "text" : "password"} 
                         name='password'
                         value={formData.password}
                         onChange={handleChange}
@@ -99,6 +106,13 @@ const Login = () => {
                         className="bg-transparent flex-1 text-white focus:outline-none" 
                         required
                     />
+                    <button
+                        type="button"
+                        className="absolute right-4 text-gray-400"
+                        onClick={togglePasswordVisibility}
+                    >
+                        {passwordVisible ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
+                    </button>
                 </div>
             </div>
 
