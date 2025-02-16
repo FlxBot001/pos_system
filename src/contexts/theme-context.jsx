@@ -51,4 +51,8 @@ const initialState = {
     );
   }
 
-  
+  ThemeProvider.propTypes = {
+    children: PropTypes.node,
+    defaultTheme: PropTypes.string,
+    storageKey: PropTypes.string,
+  };
