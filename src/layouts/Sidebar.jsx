@@ -37,9 +37,17 @@ export const Sidebar = forwardRef(({ collapsed }, ref) => {
                 {navbarLinks.map((navbarLink) => (
                     <nav
                         key={navbarLink.title}
-                        className={cn("sidebar-group", collapsed && "md:items-center")}
+                        className={cn(
+                            "sidebar-group", 
+                            collapsed && "md:items-center"
+                        )}
                     >
-                        <p className={cn("sidebar-group-title", collapsed && "md:w-[45px]")}>{navbarLink.title}</p>
+                        <p className={cn(
+                            "sidebar-group-title", 
+                            collapsed && "md:w-[45px]"
+                            )}>
+                                {navbarLink.title}
+                        </p>
                         {navbarLink.links.map((link) => (
                             <NavLink
                                 key={link.label}

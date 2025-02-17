@@ -8,6 +8,7 @@ import { Header } from "../layouts/Header";
 
 import { cn } from "../utils/cn";
 import { useEffect, useRef, useState } from "react";
+import DashboardPage from "./dashboard/page";
 
 const Layout = () => {
     const isDesktopDevice = useMediaQuery("(min-width: 768px)");
@@ -45,6 +46,9 @@ const Layout = () => {
                 <div className="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden p-6">
                     <Outlet />
                 </div>
+            </div>
+            <div className="">
+                <DashboardPage/>
             </div>
         </div>
     );

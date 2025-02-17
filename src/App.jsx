@@ -27,9 +27,14 @@ MLayout.propTypes = {
 
 const router = createBrowserRouter([
   {
+    path: "/dashboard",
+    element: 
+      <Layout />,
+  },
+  {
     path: "/",
     element: <MLayout>
-      <Layout />
+      <Home />
     </MLayout>,
   },
   {
