@@ -21,6 +21,9 @@ const Sidebar = forwardRef(({ collapsed }, ref) => {
         />
         {!collapsed && <p className="text-2xl mt-1.5 font-bold text-slate-900 transition-colors dark:text-slate-50">ForkLy</p>}
       </div>
+      <div className="flex w-full flex-col gap-y-4 overflow-y-auto overflow-x-hidden p-3 [scrollbar-width:_thin]">
+        
+      </div>
     </aside>
   );
 });

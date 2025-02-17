@@ -73,7 +73,15 @@ const router = createBrowserRouter([
     </MLayout>,
   },
   {
-    path: "/analytics/reports",
+    path: "/analytics",
+    element: <MLayout>
+      <h1 className="title">
+        Analytics
+      </h1>
+    </MLayout>,
+  },
+  {
+    path: "/reports",
     element: <MLayout>
       <h1 className="title">
         Reports

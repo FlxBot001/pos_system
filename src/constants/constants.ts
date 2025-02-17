@@ -8,6 +8,18 @@ import paneerTikka from '../assets/paneer-tika.webp';
 import gulabJamun from '../assets/gulab-jamun.webp';
 import pooriSabji from '../assets/poori-sabji.webp';
 import roganJosh from '../assets/rogan-josh.jpg';
+import { 
+  ChartColumn, 
+  Home, 
+  NotepadText, 
+  Package, 
+  PackagePlus, 
+  Settings, 
+  ShoppingBag, 
+  UserCheck, 
+  UserPlus, 
+  Users 
+} from 'lucide-react';
 
 export const popularDishes = [
     {
@@ -491,3 +503,78 @@ export const rooms = [
   { id: 39, name: "Room 39", status: "oo", initial: "EF", packs: 4 },
   { id: 40, name: "Room 40", status: "vnr", initial: "GH", packs: 3 },
 ];
+
+
+// Dashboard
+export const navLinks = [
+  {
+    title: "Dashboard",
+    links: [
+      {
+        label: "Dashboard",
+        icon: Home,
+        path: "/dashboard"
+      },
+      {
+        label: "Analytics",
+        icon: ChartColumn,
+        path: "/analytics"
+      },
+      {
+        label: "Reports",
+        icon: NotepadText,
+        path: "/reports"
+      },      
+    ],
+  },
+  {
+    title: "Customers",
+    links: [
+      {
+        label: "Customers",
+        icon: Users,
+        path: "/customers"
+      },
+      {
+        label: "New customer",
+        icon: UserPlus,
+        path: "/new-customer"
+      },
+      {
+        label: "Verified Customer",
+        icon: UserCheck,
+        path: "/verified-customers"
+      },      
+    ],
+  },
+  {
+    title: "Products",
+    links: [
+      {
+        label: "Products",
+        icon: Package,
+        path: "/products"
+      },
+      {
+        label: "New product",
+        icon: PackagePlus,
+        path: "/new-product"
+      },
+      {
+        label: "Inventory",
+        icon: ShoppingBag,
+        path: "/inventory"
+      },      
+    ],
+  },
+  {
+    title: "Settings",
+    links: [
+      {
+        label: "Settings",
+        icon: Settings,
+        path: "/settings"
+      }     
+    ],
+  },
+]
