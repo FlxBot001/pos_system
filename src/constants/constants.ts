@@ -21,8 +21,8 @@ import {
   Users 
 } from 'lucide-react';
 
-import ProfileImage from "@/assets/profile-image.jpg";
-import ProductImage from "@/assets/product-image.jpg";
+import ProfileImage from "../assets/profile-image.jpg";
+import ProductImage from "../assets/product-image.jpg";
 
 export const popularDishes = [
     {
