@@ -1,8 +1,8 @@
 // Top Cards
-import { CreditCard, DollarSign, Package, TrendingUp, TrendingUpDown, Users } from 'lucide-react'
+import { CreditCard, DollarSign, Package, TrendingUp, Users } from 'lucide-react'
 import React from 'react'
 
-const AdminDash = props => {
+const AdminDash = () => {
     return (
         <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="card">
